@@ -10,7 +10,9 @@ export default function AuthProvider({ children }: PropsWithChildren) {
   const session = use(Effect.runPromise(getSupanaseSessionProgram));
 
   return !session ? (
-    <Auth supabaseClient={supabase} appearance={{ theme: ThemeSupa }} />
+    <div style={{ display: "flex", justifyContent: "center", width: "100vw" }}>
+      <Auth supabaseClient={supabase} appearance={{ theme: ThemeSupa }} />
+    </div>
   ) : (
     <AuthSession value={session}>{children}</AuthSession>
   );
