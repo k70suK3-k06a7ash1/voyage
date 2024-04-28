@@ -3,7 +3,7 @@
 #   Refer for explanation to following link:
 #   https://github.com/evilmartians/lefthook/blob/master/docs/configuration.md
 #
-pre-push:
+pre-commit:
   commands:
     build-test:
       tags: bun build
