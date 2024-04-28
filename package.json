@@ -1,5 +1,5 @@
 {
-  "name": "voyage-react",
+  "name": "voyage",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,7 +10,7 @@
     "preview": "vite preview",
     "predeploy": "bun run build",
     "deploy": "gh-pages -d dist",
-    "homepage": "https://k70suK3-k06a7ash1.github.io/voyage-react/"
+    "homepage": "https://k70suK3-k06a7ash1.github.io/voyage/"
   },
   "dependencies": {
     "@effect/schema": "^0.66.9",
