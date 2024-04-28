@@ -8,11 +8,10 @@ import { AuthSession } from "./contexts/AuthSession";
 function App() {
   const authSession = use(AuthSession);
   return (
-    <SiteContext value={{ name: "Bob" }}>
+    <SiteContext value={{ name: authSession?.user.email ?? "" }}>
       <Suspense fallback={<>loading</>}>
         <Podcast />
       </Suspense>
-      <p>{authSession?.user.email}</p>
       <Footer />
     </SiteContext>
   );
