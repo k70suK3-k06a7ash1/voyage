@@ -1,4 +1,3 @@
-// @ts-ignore
 import { use } from "react";
 import { SiteContext } from "../contexts/SiteContenxt";
 export function Footer() {

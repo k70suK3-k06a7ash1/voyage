@@ -1,5 +1,4 @@
-// @ts-ignore
-import { useActionState, useOptimistic, use, cache, useContext } from "react";
+import { use } from "react";
 import { Suspense } from "react";
 import { Podcast } from "./components/Podcast";
 import { Footer } from "./components/Footer";
@@ -9,7 +8,6 @@ import { AuthSession } from "./contexts/AuthSession";
 function App() {
   const authSession = use(AuthSession);
   return (
-    // @ts-ignore
     <SiteContext value={{ name: "Bob" }}>
       <Suspense fallback={<>loading</>}>
         <Podcast />
