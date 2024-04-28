@@ -16,6 +16,7 @@ jobs:
       # run any `bun` or `bunx` command
       - run: bun install
       - run: bun run predeploy
-      - run: bun run deploy
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: dist
