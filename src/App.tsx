@@ -12,6 +12,7 @@ function App() {
       <Suspense fallback={<>loading</>}>
         <Podcast />
       </Suspense>
+      <p>test</p>
       <Footer />
     </SiteContext>
   );
