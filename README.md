@@ -9,7 +9,7 @@ bun run deploy
 
 ## Site
 
-[here](https://k70suk3-k06a7ash1.github.io/voyage-react/)
+[here](https://k70suk3-k06a7ash1.github.io/voyage/)
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
