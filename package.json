@@ -7,12 +7,16 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "bun run build",
+    "deploy": "gh-pages -d dist",
+    "homepage": "https://k70suK3-k06a7ash1.github.io/voyage-react/"
   },
   "dependencies": {
-    "@supabase/supabase-js": "^2.42.7",
     "@effect/schema": "^0.66.9",
+    "@supabase/supabase-js": "^2.42.7",
     "effect": "^3.0.6",
+    "gh-pages": "^6.1.1",
     "react": "^19.0.0-beta-94eed63c49-20240425",
     "react-dom": "^19.0.0-beta-94eed63c49-20240425"
   },
