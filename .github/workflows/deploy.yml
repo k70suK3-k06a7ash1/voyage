@@ -9,6 +9,9 @@ jobs:
   my-job:
     name: deploy
     runs-on: ubuntu-latest
+    env:
+      VITE_APP_SUPABASE_URL: ${{ secrets.VITE_APP_SUPABASE_URL }}
+      VITE_APP_SUPABASE_KEY: ${{ secrets.VITE_APP_SUPABASE_KEY }}
     steps:
       - uses: actions/checkout@v4
       - uses: oven-sh/setup-bun@v1
