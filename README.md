@@ -1,5 +1,11 @@
 # React + TypeScript + Vite
 
+## set up
+
+```
+brew install lefthook
+```
+
 ## Deploy
 
 ```
