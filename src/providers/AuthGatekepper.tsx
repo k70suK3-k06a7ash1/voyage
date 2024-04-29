@@ -9,7 +9,9 @@ export function AuthGatekepper({ children }: PropsWithChildren) {
 
   const match = Match.type<Session | null>().pipe(
     Match.when(Match.null, (_) => <>hello</>),
-    Match.orElse((_) => <AuthSession value={session}>{children}</AuthSession>)
+    Match.orElse((session) => (
+      <AuthSession value={session}>{children}</AuthSession>
+    ))
   );
 
   return match(session);
