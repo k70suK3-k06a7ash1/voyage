@@ -8,7 +8,7 @@ export function AuthGatekepper({ children }: PropsWithChildren) {
   const session = use(Effect.runPromise(getSupanaseSessionProgram));
 
   const match = Match.type<Session | null>().pipe(
-    Match.when(Match.null, (_) => <>hello</>),
+    Match.when(Match.null, (_) => <>unAuth</>),
     Match.orElse((session) => (
       <AuthSession value={session}>{children}</AuthSession>
     ))
