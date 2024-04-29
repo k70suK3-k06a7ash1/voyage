@@ -13,6 +13,9 @@ export const getSupanaseSessionProgram: Effect.Effect<
     catch: () => new ResponseError(),
   });
 
+  // waiting
+  yield* Effect.sleep(1500);
+
   switch (true) {
     case response.error instanceof AuthError:
       return yield* Effect.fail(new AuthError("auth error"));
