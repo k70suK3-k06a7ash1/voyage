@@ -11,16 +11,11 @@
 .svgFrame svg {
     position: absolute;
     transition: .5s;
-    /* z-index: calc(1 - (0.2 * var(--j))); */
     transform-origin: center;
     width: 344px;
     height: 344px;
     fill: none;
 }
-
-/* .svgFrame:hover svg {
-    transform: rotate(-80deg) skew(30deg) translateX(calc(45px * var(--i))) translateY(calc(-35px * var(--i)));
-} */
 
 .svgFrame svg #center {
     transition: .5s;

@@ -18,7 +18,7 @@
 }
 
 .neumorphismButton {
-    background-color: #1BD1C8;
+    background-color: var(--primary-500);
     color: #fff;
     padding: 10px 20px;
     font-size: 16px;
