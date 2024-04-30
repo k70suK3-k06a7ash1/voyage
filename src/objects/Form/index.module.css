@@ -18,7 +18,7 @@
 }
 
 .neumorphismButton {
-    background-color: #4CAF50;
+    background-color: #1BD1C8;
     color: #fff;
     padding: 10px 20px;
     font-size: 16px;
@@ -28,5 +28,5 @@
 }
 
 .neumorphismButton:hover {
-    background-color: #3e8e41;
+    background-color: #D4CA17;
 }
