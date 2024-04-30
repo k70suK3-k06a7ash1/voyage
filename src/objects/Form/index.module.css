@@ -21,7 +21,9 @@ color: white;}
 }
 
 .neumorphismButton {
-    background-color: var(--primary-500);
+    /* background-color: #BB012D; */
+    /* background-color: #B35C37; */
+    background-color: #FFB11B;
     color: var(--primary-100);
     padding: 10px 20px;
     font-size: 16px;
@@ -31,5 +33,7 @@ color: white;}
 }
 
 .neumorphismButton:hover {
-    background-color: var(--primary-600);
+    /* background-color: #D0104C; */
+    /* background-color: #CA7853; */
+    background-color: #C18A26;
 }
