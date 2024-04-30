@@ -1,4 +1,5 @@
 import { supabase } from "@/libs/supabase";
+import { redirect } from "@tanstack/react-router";
 
 export const loginAction = async (_: any, formData: FormData) => {
   console.log(formData.get("email"));
@@ -10,5 +11,5 @@ export const loginAction = async (_: any, formData: FormData) => {
   });
 
   return error;
-  // redirect
+  void redirect({ to: "/" });
 };
