@@ -15,12 +15,15 @@
   "dependencies": {
     "@effect/schema": "^0.66.9",
     "@supabase/supabase-js": "^2.42.7",
+    "@tanstack/react-router": "^1.31.3",
+    "@tanstack/router-vite-plugin": "^1.30.0",
     "effect": "^3.0.6",
     "gh-pages": "^6.1.1",
     "react": "^19.0.0-beta-94eed63c49-20240425",
     "react-dom": "^19.0.0-beta-94eed63c49-20240425"
   },
   "devDependencies": {
+    "@tanstack/router-devtools": "^1.31.3",
     "@types/react": "npm:types-react@beta",
     "@types/react-dom": "npm:types-react-dom@beta",
     "@typescript-eslint/eslint-plugin": "^7.7.1",
