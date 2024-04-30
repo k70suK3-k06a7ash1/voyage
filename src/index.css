@@ -4,8 +4,9 @@
   font-weight: 400;
 
   color-scheme: light dark;
+  /* color: #BB012D; */
   color: rgba(255, 255, 255, 0.87);
-  background-color: var(--neutral-900);
+  background-color: #005CAF;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -113,5 +114,7 @@ input {
   appearance: none;
 }
 
-
+::placeholder{
+  color: white;
+}
 
