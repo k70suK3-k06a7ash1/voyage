@@ -1,5 +1,6 @@
 import { useState } from "react";
 import style from "./index.module.css";
+import { Spacer } from "../../components/Spacer";
 const AuthForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -31,7 +32,7 @@ const AuthForm = () => {
             className={style.neumorphismInput}
           />
         </label>
-        <br />
+        <Spacer size={4} />
         <label>
           Password:
           <input
@@ -43,7 +44,7 @@ const AuthForm = () => {
             className={style.neumorphismInput}
           />
         </label>
-        <br />
+        <Spacer size={8} />
         <button type="submit" className={style.neumorphismButton}>
           Login
         </button>
