@@ -1,37 +1,11 @@
 import { useActionState } from "react";
 import style from "./index.module.css";
 import { Spacer } from "../../components/Spacer";
-// import { supabase } from "@/libs/supabase";
-// import { AuthError } from "@supabase/supabase-js";
-
-// async function action(formData) {
-//   console.log({ formData });
-//   const { data: _, error } = await supabase.auth.signInWithOtp({
-//     email: formData.email,
-//     options: {
-//       emailRedirectTo: "http://localhost:5173/voyage",
-//     },
-//   });
-//   if (error) throw new Error(error?.message);
-
-//   return {
-//     email: "",
-//     password: "",
-//   };
-// }
-
-// type TAuth = {
-//   email: string;
-// };
+import { loginAction } from "@/actions/login";
 
 const AuthForm = () => {
-  const [_auth, formAction, isPending] = useActionState(
-    async (_: any, formData: FormData) => {
-      console.log(formData.get("email"));
-    },
-    undefined
-  );
-
+  const [error, formAction, isPending] = useActionState(loginAction, undefined);
+  console.log(error);
   return (
     <div className={style.neumorphismForm}>
       <form action={formAction}>
