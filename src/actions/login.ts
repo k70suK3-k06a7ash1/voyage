@@ -5,7 +5,7 @@ export const loginAction = async (_: any, formData: FormData) => {
   const { error } = await supabase.auth.signInWithOtp({
     email: formData?.get("email")?.toString() ?? "",
     options: {
-      emailRedirectTo: "http://localhost:5173/voyage",
+      emailRedirectTo: "https://k70suk3-k06a7ash1.github.io/voyage",
     },
   });
 
