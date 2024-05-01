@@ -1,4 +1,5 @@
 import { supabase } from "@/libs/supabase";
+import { redirect } from "@tanstack/react-router";
 
 const switchRedirectUrl = (isProd: boolean) =>
   isProd
@@ -6,7 +7,6 @@ const switchRedirectUrl = (isProd: boolean) =>
     : "http://localhost:5173/voyage/";
 
 export const loginAction = async (_: unknown, formData: FormData) => {
-  console.log(`${switchRedirectUrl(import.meta.env.PROD)}`);
   const { error } = await supabase.auth.signInWithOtp({
     email: formData?.get("email")?.toString() ?? "",
     options: {
@@ -14,5 +14,7 @@ export const loginAction = async (_: unknown, formData: FormData) => {
     },
   });
 
-  return error;
+  if (error) return error;
+
+  throw redirect({ to: "/authorized" });
 };
