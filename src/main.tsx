@@ -17,11 +17,6 @@ declare module "@tanstack/react-router" {
 }
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <RouterProvider basepath="voyage" router={router} />
-    {/* <Suspense fallback={<Spinner />}>
-      <AuthGatekepper>
-        <App />
-      </AuthGatekepper>
-    </Suspense> */}
+    <RouterProvider basepath="voyage/" router={router} />
   </React.StrictMode>
 );

@@ -5,7 +5,6 @@ import { Footer } from "./components/Footer";
 import { SiteContext } from "./contexts/SiteContenxt";
 import { AuthSession } from "./contexts/AuthSession";
 import { logoutAction } from "./actions/logout";
-// import { Spinner } from "./components/Spinner";
 
 function App() {
   const authSession = use(AuthSession);
