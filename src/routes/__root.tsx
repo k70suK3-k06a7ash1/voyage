@@ -14,7 +14,9 @@ export const Route = createRootRoute({
         <AuthGatekepper>
           <Header />
           {/* <Menu /> */}
-          <Outlet />
+          <div>
+            <Outlet />
+          </div>
           <ButtomBar />
         </AuthGatekepper>
         {/* <TanStackRouterDevtools /> */}

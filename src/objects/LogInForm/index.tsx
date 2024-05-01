@@ -8,7 +8,7 @@ export const LogInForm = () => {
   return (
     <div className={style.neumorphismForm}>
       <form action={formAction}>
-        <label htmlFor="email">Email v7</label>
+        <label htmlFor="email">Email</label>
         <Spacer size={2} />
         <input
           id="email"
