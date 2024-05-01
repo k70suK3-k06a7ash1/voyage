@@ -3,9 +3,8 @@
     border: none;
     border-radius: 0.5rem;
     padding: 0.6em 1.2em;
-    font-size: 1em;
+    font-size: 0.90em;
     font-weight: 500;
-    font-family: inherit;
     background-color: var(--neutral-200);
     box-shadow: -3px -3px 6px var(--neutral-100), 3px 3px 6px var(--neutral-600);
     transition: box-shadow 0.8s ease;

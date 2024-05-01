@@ -10,31 +10,30 @@ export const LogInForm = () => {
   return (
     <aside>
       <h1>Voyage</h1>
+      <Spacer size={8} />
       <h2 className="concept">
         Travel humbles the soul, revealing how insignificantly we occupy our
         place in the world.
       </h2>
       <Spacer size={24} />
 
-      <div>
-        <form action={formAction}>
-          <label htmlFor="email">Email</label>
-          <Spacer size={2} />
-          <Input
-            id="email"
-            disabled={isPending}
-            type="email"
-            name="email"
-            placeholder="Enter your email"
-          />
+      <form action={formAction}>
+        <label htmlFor="email">Email</label>
+        <Spacer size={2} />
+        <Input
+          id="email"
+          disabled={isPending}
+          type="email"
+          name="email"
+          placeholder="Enter your email"
+        />
 
-          <Spacer size={16} />
-          <Button type="submit" disabled={isPending}>
-            Login
-          </Button>
-        </form>
-        {error && <ErrorMessage>{error.message}</ErrorMessage>}
-      </div>
+        <Spacer size={16} />
+        <Button type="submit" disabled={isPending}>
+          Login
+        </Button>
+      </form>
+      {error && <ErrorMessage>{error.message}</ErrorMessage>}
     </aside>
   );
 };
