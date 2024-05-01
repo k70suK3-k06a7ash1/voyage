@@ -1,0 +1,4 @@
+.message{
+    color: var(--error-message);
+    padding: 0.5rem 0;
+}

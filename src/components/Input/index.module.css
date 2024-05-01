@@ -1,0 +1,27 @@
+.neumorphism {
+    margin: 0;
+    padding: 0;
+    background: none;
+    border: none;
+    border-radius: 0;
+    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    box-shadow: inset -3px -3px 6px var(--neutral-200), inset 3px 3px 6px var(--neutral-600);
+    /* transition: box-shadow 0.8s ease; */
+
+    width: 12rem;
+    height: 3rem;
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.neumorphism:focus {
+    box-shadow: -3px -3px 6px var(--neutral-200), 3px 3px 6px var(--neutral-600);
+}
+
+::placeholder {
+    color: var(--neutral-500);
+}
