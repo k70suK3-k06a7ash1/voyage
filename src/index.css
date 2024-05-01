@@ -63,10 +63,11 @@ a {
   transition: box-shadow 0.8s ease;
   cursor: pointer;
 }
-a:hover {
+/* a:hover {
   box-shadow: 2.5px 2.5px 5px var(--neutral-200), -2.5px -2.5px 5px var(--neutral-700);
   color: var(--neutral-700);
-}
+} */
+
 
 body {
   margin: 0;
