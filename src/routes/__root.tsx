@@ -6,6 +6,7 @@ import { AuthGatekepper } from "@/providers/AuthGatekepper";
 import { createRootRoute, Outlet } from "@tanstack/react-router";
 // import { TanStackRouterDevtools } from "@tanstack/router-devtools";
 import { Suspense } from "react";
+import { MainFrame } from "@/styles/MainFrame";
 
 export const Route = createRootRoute({
   component: () => (
@@ -14,9 +15,9 @@ export const Route = createRootRoute({
         <AuthGatekepper>
           <Header />
           {/* <Menu /> */}
-          <div>
+          <MainFrame>
             <Outlet />
-          </div>
+          </MainFrame>
           <ButtomBar />
         </AuthGatekepper>
         {/* <TanStackRouterDevtools /> */}
