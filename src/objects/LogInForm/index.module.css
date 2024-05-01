@@ -1,18 +1,9 @@
-.neumorphismForm {
-    padding: 20px;
-}
-
 .neumorphismInput {
-    width: 300px;
-    height: 40px;
+    width: 12rem;
+    height: 2rem;
     font-size: 16px;
     padding: 10px;
     border-radius: 5px;
 }
 
-
-.neumorphismButton {
-    font-size: 1rem;
-    border-radius: 5px;
-}
 

@@ -1,12 +1,8 @@
 .container{
-    position: absolute;
-    width: 100vw;
     display: flex;
-    box-sizing: border-box;
-    padding: 0.5rem 0.75rem;
+    padding: 0.5rem 0;
     gap: 1rem;
-    bottom: 0;
-    height: 4rem;
+    height: 3rem;
 }
 
 
