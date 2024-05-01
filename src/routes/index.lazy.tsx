@@ -15,8 +15,8 @@ function Index() {
     <SiteContext value={{ name: authSession?.user.email ?? "" }}>
       <Suspense fallback={<>loading</>}>
         <Podcast />
+        <button>sample</button>
       </Suspense>
-      <p>test</p>
       <Footer />
     </SiteContext>
   );
