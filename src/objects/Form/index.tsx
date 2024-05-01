@@ -29,6 +29,7 @@ const AuthForm = () => {
           Login
         </button>
       </form>
+      {error && <p style={{ color: "#F596AA" }}>{error.message}</p>}
     </div>
   );
 };

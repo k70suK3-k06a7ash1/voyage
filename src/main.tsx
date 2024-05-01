@@ -26,6 +26,18 @@ declare module "@tanstack/react-router" {
 }
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <RouterProvider router={router} history={hashHistory} />
+    {import.meta.env.PROD ? (
+      <RouterProvider
+        router={router}
+        //basepath="/voyage/"
+        history={hashHistory}
+      />
+    ) : (
+      <RouterProvider
+        router={router}
+        basepath="/voyage/"
+        // history={hashHistory}
+      />
+    )}
   </React.StrictMode>
 );
