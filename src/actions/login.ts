@@ -6,7 +6,7 @@ const switchRedirectUrl = (isProd: boolean) =>
     : "http://localhost:5173/voyage/";
 
 export const loginAction = async (_: unknown, formData: FormData) => {
-  console.log(`${switchRedirectUrl(import.meta.env.PROD)}/voyage`);
+  console.log(`${switchRedirectUrl(import.meta.env.PROD)}`);
   const { error } = await supabase.auth.signInWithOtp({
     email: formData?.get("email")?.toString() ?? "",
     options: {

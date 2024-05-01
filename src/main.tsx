@@ -4,7 +4,7 @@ import ReactDOM from "react-dom/client";
 import {
   RouterProvider,
   createRouter,
-  createHashHistory,
+  // createHashHistory,
   // createMemoryHistory,
 } from "@tanstack/react-router";
 
@@ -13,10 +13,7 @@ import { routeTree } from "./routeTree.gen";
 
 // Create a new router instance
 const router = createRouter({ routeTree });
-const hashHistory = createHashHistory();
-// const memoryHistory = createMemoryHistory({
-//   initialEntries: ["/voyage"],
-// });
+// const hashHistory = createHashHistory();
 
 // Register the router instance for type safety
 declare module "@tanstack/react-router" {
@@ -26,18 +23,19 @@ declare module "@tanstack/react-router" {
 }
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    {import.meta.env.PROD ? (
+    {/* {import.meta.env.PROD ? (
       <RouterProvider
         router={router}
+        // basepath="root"
         //basepath="/voyage/"
         history={hashHistory}
       />
-    ) : (
-      <RouterProvider
-        router={router}
-        basepath="/voyage/"
-        // history={hashHistory}
-      />
-    )}
+    ) : ( */}
+    <RouterProvider
+      router={router}
+      basepath="/voyage/"
+      // history={hashHistory}
+    />
+    {/* )} */}
   </React.StrictMode>
 );
