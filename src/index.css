@@ -43,6 +43,9 @@
   --neutral-700: #656C6B;
   --neutral-800: #434947;
   --neutral-900: #222625;
+
+
+  --error-message: #D0104C;
 }
 
 .content{
@@ -75,9 +78,7 @@ a:focus-visible{
   color: var(--neutral-700);
 } */
 
-body{
-  margin: 0;
-}
+
 
 .root-container {
   margin: 0;
@@ -88,53 +89,13 @@ body{
   height: 100vh;
 }
 
-button {
-  color: var(--neutral-800);
-  border: none;
-  border-radius: 0.5rem;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: var(--neutral-200);
-  box-shadow: -3px -3px 6px var(--neutral-100), 3px 3px 6px var(--neutral-600);
-  transition: box-shadow 0.8s ease;
-  cursor: pointer;
-}
-
-button:hover {
-    box-shadow: 3px 3px 6px var(--neutral-200), -3px -3px 6px var(--neutral-700);
-}
-  
-button:focus,
-button:focus-visible {
-  outline: none;
-    box-shadow: 3px 3px 6px var(--neutral-200), -3px -3px 6px var(--neutral-700);
-}
-
-button:active{
-  box-shadow: inset -3px -3px 6px var(--neutral-200),inset  3px 3px 6px var(--neutral-700);
+.concept{
+  font-size: 0.75rem;
 }
 
 
-input {
-  margin: 0;
-  padding: 0;
-  background: none;
-  border: none;
-  border-radius: 0;
-  outline: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  box-shadow: inset -3px -3px 6px var(--neutral-200), inset 3px 3px 6px var(--neutral-600);
-  /* transition: box-shadow 0.8s ease; */
-}
 
-input:focus{
-  box-shadow:  -3px -3px 6px var(--neutral-200),  3px 3px 6px var(--neutral-600);}
 
-::placeholder{
-  color: var(--neutral-500);
-}
+
+
 

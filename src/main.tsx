@@ -36,6 +36,10 @@ ReactDOM.createRoot(document.getElementById("root")!, {
   },
 }).render(
   <React.StrictMode>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/destyle.css@3.0.0/destyle.css"
+    />
     {/* {import.meta.env.PROD ? (
       <RouterProvider
         router={router}
