@@ -2,7 +2,7 @@ import { supabase } from "@/libs/supabase";
 
 const switchRedirectUrl = (isProd: boolean) =>
   isProd
-    ? "https://k70suk3-k06a7ash1.github.io/voyage/#/"
+    ? "https://k70suk3-k06a7ash1.github.io/voyage/"
     : "http://localhost:5173/voyage/";
 
 export const loginAction = async (_: unknown, formData: FormData) => {
