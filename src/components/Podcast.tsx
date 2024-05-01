@@ -1,4 +1,4 @@
-import { use } from "react";
+import { use, useMemo } from "react";
 import { Effect } from "effect";
 import {
   ApiResponse,
@@ -6,7 +6,9 @@ import {
 } from "../effects/getApiResponseProgram";
 
 export const Podcast = () => {
-  const podcast = use<ApiResponse>(Effect.runPromise(getApiResponseProgram));
+  const podcast = use<ApiResponse>(
+    useMemo(() => Effect.runPromise(getApiResponseProgram), [])
+  );
 
   return (
     <>
