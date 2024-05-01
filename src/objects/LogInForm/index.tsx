@@ -3,13 +3,12 @@ import style from "./index.module.css";
 import { Spacer } from "../../components/Spacer";
 import { loginAction } from "@/actions/login";
 
-const AuthForm = () => {
+export const LogInForm = () => {
   const [error, formAction, isPending] = useActionState(loginAction, undefined);
-  console.log(error);
   return (
     <div className={style.neumorphismForm}>
       <form action={formAction}>
-        <label htmlFor="email">Email</label>
+        <label htmlFor="email">Email v7</label>
         <Spacer size={2} />
         <input
           id="email"
@@ -33,5 +32,3 @@ const AuthForm = () => {
     </div>
   );
 };
-
-export default AuthForm;

@@ -3,7 +3,7 @@ import { AuthSession } from "../contexts/AuthSession";
 import { Effect, Match } from "effect";
 import { getSupanaseSessionProgram } from "../effects/getSupanaseSessionProgram";
 import { Session } from "@supabase/supabase-js";
-import AuthForm from "../objects/Form";
+import { LogInForm } from "../objects/LogInForm";
 
 export function AuthGatekepper({ children }: PropsWithChildren) {
   const session = use(
@@ -11,7 +11,7 @@ export function AuthGatekepper({ children }: PropsWithChildren) {
   );
 
   const match = Match.type<Session | null>().pipe(
-    Match.when(Match.null, (_) => <AuthForm />),
+    Match.when(Match.null, (_) => <LogInForm />),
     Match.orElse((session) => (
       <AuthSession value={session}>{children}</AuthSession>
     ))
