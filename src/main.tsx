@@ -21,7 +21,20 @@ declare module "@tanstack/react-router" {
     router: typeof router;
   }
 }
-ReactDOM.createRoot(document.getElementById("root")!).render(
+ReactDOM.createRoot(document.getElementById("root")!, {
+  onUncaughtError: (error, errorInfo) => {
+    // ... log error report
+    console.error({ error, errorInfo });
+  },
+  onCaughtError: (error, errorInfo) => {
+    // ... log error report
+    console.error({ error, errorInfo });
+  },
+  onRecoverableError: (error, errorInfo) => {
+    // ... log error report
+    console.error({ error, errorInfo });
+  },
+}).render(
   <React.StrictMode>
     {/* {import.meta.env.PROD ? (
       <RouterProvider

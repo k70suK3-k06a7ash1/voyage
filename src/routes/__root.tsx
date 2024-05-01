@@ -1,6 +1,6 @@
 import { ButtomBar } from "@/components/BottomBar";
 import { Spinner } from "@/components/Spinner";
-import { Header } from "@/objects/Header";
+import { Header } from "@/components/Header";
 // import { Menu } from "@/objects/Menu";
 import { AuthGatekepper } from "@/providers/AuthGatekepper";
 import { createRootRoute, Outlet } from "@tanstack/react-router";
