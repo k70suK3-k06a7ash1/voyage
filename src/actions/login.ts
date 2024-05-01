@@ -2,7 +2,6 @@ import { supabase } from "@/libs/supabase";
 import { redirect } from "@tanstack/react-router";
 
 export const loginAction = async (_: unknown, formData: FormData) => {
-  console.log(formData.get("email"));
   const { error } = await supabase.auth.signInWithOtp({
     email: formData?.get("email")?.toString() ?? "",
     options: {

@@ -26,11 +26,6 @@ declare module "@tanstack/react-router" {
 }
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <RouterProvider
-      // basepath="/voyage/"
-      router={router}
-      history={hashHistory}
-      //  history={memoryHistory}
-    />
+    <RouterProvider router={router} history={hashHistory} />
   </React.StrictMode>
 );
