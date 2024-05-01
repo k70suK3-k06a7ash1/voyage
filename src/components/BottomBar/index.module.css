@@ -4,11 +4,11 @@
     display: flex;
     bottom: 0;
     height: 4rem;
-    background-color: var(--primary-300);
+    background-color: var(--neutral-200);
 }
 
 .block{
-    border: 1px solid var(--primary-600);
+    border: 1px solid var(--neutral-400);
     width: 100%;
     display: flex;
     justify-content: center;
