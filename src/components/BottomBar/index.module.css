@@ -2,26 +2,11 @@
     position: absolute;
     width: 100vw;
     display: flex;
-    gap: 0.25rem;
+    box-sizing: border-box;
+    padding: 0.5rem 0.75rem;
+    gap: 1rem;
     bottom: 0;
     height: 4rem;
-    background-color: var(--neutral-200);
-    padding: 0.25rem 0;
 }
 
 
-.neumorphismButton {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--neutral-200);
-    border: none;
-    border-radius: 1rem;
-    box-shadow: 2.5px 2.5px 5px var(--neutral-200), -2.5px -2.5px 5px var(--neutral-400);
-    transition: box-shadow 0.3s ease;
-}
-
-.neumorphismButton :hover {
-    box-shadow: 3px 3px 6px var(--neutral-200), -3px -3px 6px var(--neutral-600);
-}

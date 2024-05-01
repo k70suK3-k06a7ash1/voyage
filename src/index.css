@@ -2,7 +2,6 @@
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
   /* color-scheme: light dark; */
   /* color: #BB012D; */
   color: var(--neutral-800);
@@ -50,12 +49,23 @@
 }
 
 a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border-radius: 1rem;
   font-weight: 700;
+  border: none;
   color: var(--neutral-800);
+  background-color: var(--neutral-200);
   text-decoration: inherit;
+  box-shadow: -3px -3px 6px var(--neutral-100), 3px 3px 6px var(--neutral-600);
+  transition: box-shadow 0.8s ease;
+  cursor: pointer;
 }
 a:hover {
-  color: var(--neutral-600);
+  box-shadow: 2.5px 2.5px 5px var(--neutral-200), -2.5px -2.5px 5px var(--neutral-700);
+  color: var(--neutral-700);
 }
 
 body {
@@ -75,33 +85,24 @@ button {
   font-family: inherit;
   background-color: var(--neutral-200);
   box-shadow: -3px -3px 6px var(--neutral-100), 3px 3px 6px var(--neutral-600);
-  transition: box-shadow 0.3s ease;
+  transition: box-shadow 0.8s ease;
   cursor: pointer;
 }
 
 button:hover {
-    box-shadow: 2.5px 2.5px 5px var(--neutral-100), -2.5px -2.5px 5px var(--neutral-600);
+    box-shadow: 3px 3px 6px var(--neutral-200), -3px -3px 6px var(--neutral-700);
 }
   
 button:focus,
 button:focus-visible {
   outline: none;
-    box-shadow: 2.5px 2.5px 5px var(--neutral-100), -2.5px -2.5px 5px var(--neutral-600);
+    box-shadow: 3px 3px 6px var(--neutral-200), -3px -3px 6px var(--neutral-700);
 }
 
 button:active{
-  box-shadow: inset -3px -3px 6px var(--neutral-100),inset  3px 3px 6px var(--neutral-600);}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-
+  box-shadow: inset -3px -3px 6px var(--neutral-200),inset  3px 3px 6px var(--neutral-700);
 }
+
 
 input {
   margin: 0;
