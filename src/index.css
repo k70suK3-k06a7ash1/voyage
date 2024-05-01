@@ -3,10 +3,11 @@
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
+  /* color-scheme: light dark; */
   /* color: #BB012D; */
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #005CAF;
+  color: var(--neutral-800);
+  background-color: var(--neutral-200);
+  /* background-color: #005CAF; */
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -50,11 +51,11 @@
 
 a {
   font-weight: 700;
-  color: var(--accent-700);
+  color: var(--neutral-800);
   text-decoration: inherit;
 }
 a:hover {
-  color: var(--accent-600);
+  color: var(--neutral-600);
 }
 
 body {
@@ -65,29 +66,31 @@ body {
   min-height: 100vh;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
+  color: var(--neutral-800);
+  border: none;
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: var(--neutral-200);
+  box-shadow: -3px -3px 6px var(--neutral-100), 3px 3px 6px var(--neutral-600);
+  transition: box-shadow 0.3s ease;
   cursor: pointer;
-  transition: border-color 0.25s;
 }
-/* button:hover {
-  border-color: #646cff;
-} */
+
+button:hover {
+    box-shadow: 2.5px 2.5px 5px var(--neutral-100), -2.5px -2.5px 5px var(--neutral-600);
+}
+  
 button:focus,
 button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  outline: none;
+    box-shadow: 2.5px 2.5px 5px var(--neutral-100), -2.5px -2.5px 5px var(--neutral-600);
 }
+
+button:active{
+  box-shadow: inset -3px -3px 6px var(--neutral-100),inset  3px 3px 6px var(--neutral-600);}
 
 @media (prefers-color-scheme: light) {
   :root {
@@ -97,9 +100,7 @@ button:focus-visible {
   a:hover {
     color: #747bff;
   }
-  button {
-    background-color: #f9f9f9;
-  }
+
 }
 
 input {
@@ -112,9 +113,14 @@ input {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+  box-shadow: inset -3px -3px 6px var(--neutral-200), inset 3px 3px 6px var(--neutral-600);
+  transition: all 0.3s ease-in-out;
 }
 
+input:focus{
+  box-shadow:  -3px -3px 6px var(--neutral-200),  3px 3px 6px var(--neutral-600);}
+
 ::placeholder{
-  color: white;
+  color: var(--neutral-500);
 }
 
