@@ -5,6 +5,7 @@ import { Podcast } from "../components/Podcast";
 import { Footer } from "../components/Footer";
 import { SiteContext } from "../contexts/SiteContenxt";
 import { AuthSession } from "../contexts/AuthSession";
+import { Spacer } from "@/components/Spacer";
 export const Route = createLazyFileRoute("/")({
   component: Index,
 });
@@ -13,6 +14,7 @@ function Index() {
   const authSession = use(AuthSession);
   return (
     <SiteContext value={{ name: authSession?.user.email ?? "" }}>
+      <Spacer size={24} />
       <Suspense fallback={<>loading</>}>
         <Podcast />
         <button>sample</button>
