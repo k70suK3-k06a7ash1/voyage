@@ -1,5 +1,5 @@
 import { ButtomBar } from "@/components/BottomBar";
-import { Spinner } from "@/components/Spinner";
+// import { Spinner } from "@/components/Spinner";
 import { Header } from "@/components/Header";
 // import { Menu } from "@/objects/Menu";
 import { AuthGatekepper } from "@/providers/AuthGatekepper";
@@ -19,7 +19,7 @@ export const Route = createRootRoute({
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
       <div className="root-container">
-        <Suspense fallback={<Spinner />}>
+        <Suspense fallback={<></>}>
           <AuthGatekepper>
             <Header />
             <div className="content">
