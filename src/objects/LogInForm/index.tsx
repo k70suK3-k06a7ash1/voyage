@@ -2,12 +2,16 @@ import { useActionState } from "react";
 import { Spacer } from "../../components/Spacer";
 import { loginAction } from "@/actions/login";
 import { Button } from "@/components/Button";
-// import { Input } from "@/components/Input";
 import { ErrorMessage } from "@/components/ErrorMessage";
 import { EmailInput } from "@/components/EmailInput";
 
 export const LogInForm = () => {
-  const [error, formAction, isPending] = useActionState(loginAction, undefined);
+  const [result, formAction, isPending] = useActionState(
+    loginAction,
+    undefined
+  );
+
+  if (result?.type === "success") console.log("success");
   return (
     <aside>
       <h1 className="title">Voyage</h1>
@@ -21,14 +25,16 @@ export const LogInForm = () => {
       <form action={formAction}>
         <label htmlFor="email">Email</label>
         <Spacer size={2} />
-        <EmailInput isError={error != undefined} />
+        <EmailInput isError={result?.type === "error"} />
         <div
           style={{
-            display: error != undefined ? "hidden" : "block",
+            display: result?.type === "error" ? "hidden" : "block",
             height: "0.75rem",
           }}
         >
-          {error && <ErrorMessage>{error.message}</ErrorMessage>}
+          {result?.type === "error" && (
+            <ErrorMessage>{result.body.message}</ErrorMessage>
+          )}
         </div>
 
         <Spacer size={16} />

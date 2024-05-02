@@ -1,12 +1,26 @@
 import { supabase } from "@/libs/supabase";
-import { redirect } from "@tanstack/react-router";
+import { AuthError } from "@supabase/supabase-js";
 
 const switchRedirectUrl = (isProd: boolean) =>
   isProd
     ? "https://k70suk3-k06a7ash1.github.io/voyage/"
     : "http://localhost:5173/voyage/";
 
-export const loginAction = async (_: unknown, formData: FormData) => {
+type Success = {
+  type: "success";
+};
+
+type Error = {
+  type: "error";
+  body: AuthError;
+};
+
+type Result = Error | Success | undefined;
+
+export const loginAction = async (
+  _: unknown,
+  formData: FormData
+): Promise<Result> => {
   const { error } = await supabase.auth.signInWithOtp({
     email: formData?.get("email")?.toString() ?? "",
     options: {
@@ -14,7 +28,6 @@ export const loginAction = async (_: unknown, formData: FormData) => {
     },
   });
 
-  if (error) return error;
-
-  throw redirect({ to: "/authorized" });
+  if (error) return { type: "error", body: error };
+  return { type: "success" };
 };
