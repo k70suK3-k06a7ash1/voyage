@@ -9,7 +9,7 @@ export const LogInForm = () => {
   const [error, formAction, isPending] = useActionState(loginAction, undefined);
   return (
     <aside>
-      <h1>Voyage</h1>
+      <h1 className="title">Voyage</h1>
       <Spacer size={8} />
       <h2 className="concept">
         Travel humbles the soul, revealing how insignificantly we occupy our

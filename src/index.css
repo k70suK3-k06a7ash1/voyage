@@ -99,8 +99,12 @@ a:focus-visible{
 }
 
 
+.title{
+  font-size: 2rem;
+}
 
-
-
+label {
+  font-size: 0.85rem;
+}
 
 
