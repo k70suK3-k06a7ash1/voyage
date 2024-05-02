@@ -4,14 +4,20 @@ import { loginAction } from "@/actions/login";
 import { Button } from "@/components/Button";
 import { ErrorMessage } from "@/components/ErrorMessage";
 import { EmailInput } from "@/components/EmailInput";
+import { toast } from "react-toastify";
 
 export const LogInForm = () => {
   const [result, formAction, isPending] = useActionState(
     loginAction,
     undefined
   );
+  const notify = () =>
+    toast(
+      "Please check your email and click the link to complete the authentication."
+    );
 
-  if (result?.type === "success") console.log("success");
+  if (result?.type === "success") notify();
+
   return (
     <aside>
       <h1 className="title">Voyage</h1>
@@ -39,7 +45,9 @@ export const LogInForm = () => {
 
         <Spacer size={16} />
 
-        <div style={{ display: "flex", justifyContent: "end" }}>
+        <div
+          style={{ display: "flex", justifyContent: "end", maxWidth: "30rem" }}
+        >
           <Button type="submit" disabled={isPending}>
             Login
           </Button>

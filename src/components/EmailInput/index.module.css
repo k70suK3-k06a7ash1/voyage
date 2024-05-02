@@ -4,6 +4,7 @@
     border-radius: .55rem;
     height: 3rem;
     align-items: stretch;
+    max-width: 24rem;
     /* width: 50%; */
                 box-shadow: inset -3px -3px 6px var(--neutral-200), 3px 3px 6px var(--neutral-600) !important;
                 

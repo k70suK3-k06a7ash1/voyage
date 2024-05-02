@@ -7,6 +7,11 @@ import { createRootRoute, Outlet } from "@tanstack/react-router";
 // import { TanStackRouterDevtools } from "@tanstack/router-devtools";
 import { Suspense } from "react";
 // import { MainFrame } from "@/styles/MainFrame";
+import { Slide, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+const isSmartPhone = () =>
+  window.matchMedia && window.matchMedia("(max-device-width: 640px)").matches;
 
 export const Route = createRootRoute({
   component: () => (
@@ -22,6 +27,16 @@ export const Route = createRootRoute({
           </AuthGatekepper>
           {/* <TanStackRouterDevtools /> */}
         </Suspense>
+        <ToastContainer
+          toastClassName="toastOverwrite"
+          style={{
+            top: "0.5rem",
+            padding: `${isSmartPhone() ? "0 0.5rem" : ""}`,
+          }}
+          position={isSmartPhone() ? "top-center" : "top-left"}
+          theme="colored"
+          transition={Slide}
+        />
       </div>
     </>
   ),
