@@ -6,7 +6,7 @@
     align-items: stretch;
     max-width: 24rem;
     /* width: 50%; */
-                box-shadow: inset -3px -3px 6px var(--neutral-200), 3px 3px 6px var(--neutral-600) !important;
+    box-shadow:  -4px -4px 6px white, 4px 4px 6px var(--neutral-600) !important;
                 
     /* box-shadow: -3px -3px 6px var(--neutral-100), 3px 3px 6px var(--neutral-600); */
 }
