@@ -5,25 +5,34 @@
     height: 3rem;
     align-items: stretch;
     /* width: 50%; */
-    box-shadow: -3px -3px 6px var(--neutral-100), 3px 3px 6px var(--neutral-600);
+                box-shadow: inset -3px -3px 6px var(--neutral-200), 3px 3px 6px var(--neutral-600) !important;
+                
+    /* box-shadow: -3px -3px 6px var(--neutral-100), 3px 3px 6px var(--neutral-600); */
 }
 
 .icon{
-    border: .0625rem solid var(--neutral-400) !important;
+    /* border: .0625rem solid var(--neutral-400) !important; */
     border-radius: .55rem 0 0 .55rem ;
     background-color: var(--neutral-800);
     display: flex;
     align-items: center;
     padding: .6rem .75rem;
-    box-shadow:  inset 3px 3px 6px var(--neutral-700);
+    box-shadow:  inset 3px 3px 6px var(--neutral-700),3px 3px 6px var(--neutral-600);
+}
+
+
+.errorInput{
+        border: 1rem solid var(--error-message) !important;
 }
 
 .input{
     border-radius: 0 .55rem .55rem 0 !important;
     width: 12rem;
     height: 3rem;
+    box-shadow: inset -3px -3px 6px var(--neutral-200), 3px 3px 6px var(--neutral-600) !important;
+
 }
 
-.input:focus{
-        box-shadow: inset -3px -3px 6px var(--neutral-200), 3px 3px 6px var(--neutral-600) !important;
-}
+/* .input:focus{
+    box-shadow: 3px 3px 6px var(--neutral-600), inset 3px 3px 6px var(--neutral-600) !important;
+} */

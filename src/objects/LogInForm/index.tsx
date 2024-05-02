@@ -16,21 +16,29 @@ export const LogInForm = () => {
         Travel humbles the soul, revealing how insignificantly we occupy our
         place in the world.
       </h2>
-      <Spacer size={24} />
+      <Spacer size={16} />
 
       <form action={formAction}>
         <label htmlFor="email">Email</label>
         <Spacer size={2} />
-        <EmailInput />
+        <EmailInput isError={error == undefined} />
+        <div
+          style={{
+            display: error != undefined ? "hidden" : "block",
+            height: "0.75rem",
+          }}
+        >
+          {error && <ErrorMessage>{error.message}</ErrorMessage>}
+        </div>
 
         <Spacer size={16} />
+
         <div style={{ display: "flex", justifyContent: "end" }}>
           <Button type="submit" disabled={isPending}>
             Login
           </Button>
         </div>
       </form>
-      {error && <ErrorMessage>{error.message}</ErrorMessage>}
     </aside>
   );
 };
