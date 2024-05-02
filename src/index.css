@@ -108,6 +108,8 @@ a:focus-visible{
 
 .title{
   font-size: 2rem;
+  text-shadow: -1.5px -1.5px 3px white,
+    1.5px 1.5px 3px black;
 }
 
 label {
