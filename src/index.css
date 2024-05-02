@@ -89,6 +89,13 @@ a:focus-visible{
   height: 100vh;
 }
 
+@media screen and (min-width:375px) and (min-width: 600px) {
+  .root-container {
+    align-items: end;
+    padding: 0 7rem
+  }
+}
+
 .concept{
   font-size: 0.75rem;
   font-style: italic;
