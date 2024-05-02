@@ -91,6 +91,11 @@ a:focus-visible{
 
 .concept{
   font-size: 0.75rem;
+  font-style: italic;
+  line-height: 1.5rem;
+  text-decoration: underline;
+  text-decoration-color: var(--neutral-400);
+  text-underline-offset: 0.25rem;
 }
 
 
