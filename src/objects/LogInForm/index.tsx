@@ -24,9 +24,11 @@ export const LogInForm = () => {
         <EmailInput />
 
         <Spacer size={16} />
-        <Button type="submit" disabled={isPending}>
-          Login
-        </Button>
+        <div style={{ display: "flex", justifyContent: "end" }}>
+          <Button type="submit" disabled={isPending}>
+            Login
+          </Button>
+        </div>
       </form>
       {error && <ErrorMessage>{error.message}</ErrorMessage>}
     </aside>
