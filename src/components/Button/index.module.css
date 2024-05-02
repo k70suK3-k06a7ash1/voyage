@@ -1,6 +1,7 @@
 .neumorphism {
     color: var(--neutral-800);
     border: none;
+    border: .0625rem solid var(--neutral-400);
     border-radius: 0.5rem;
     padding: 0.6em 1.2em;
     font-size: 0.90em;

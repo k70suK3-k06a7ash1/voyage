@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     background: none;
-    border: none;
+    border: .0625rem solid var(--neutral-400) !important;
     border-radius: 0;
     outline: none;
     -webkit-appearance: none;
@@ -10,7 +10,6 @@
     appearance: none;
     box-shadow: inset -3px -3px 6px var(--neutral-200), inset 3px 3px 6px var(--neutral-600);
     /* transition: box-shadow 0.8s ease; */
-
     width: 12rem;
     height: 3rem;
     font-size: 16px;

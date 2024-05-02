@@ -55,6 +55,7 @@
 a {
   display: flex;
   justify-content: center;
+  border: .0625rem solid var(--neutral-400) !important;
   align-items: center;
   width: 100%;
   border-radius: 1rem;
