@@ -22,10 +22,11 @@
 
 
 .errorInput{
-        border: 1rem solid var(--error-message) !important;
+        border: .0625rem solid var(--error-message) !important;
 }
 
 .input{
+    /* border: .0625rem solid var(--error-message) !important; */
     border-radius: 0 .55rem .55rem 0 !important;
     width: 12rem;
     height: 3rem;

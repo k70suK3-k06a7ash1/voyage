@@ -21,7 +21,7 @@ export const LogInForm = () => {
       <form action={formAction}>
         <label htmlFor="email">Email</label>
         <Spacer size={2} />
-        <EmailInput isError={error == undefined} />
+        <EmailInput isError={error != undefined} />
         <div
           style={{
             display: error != undefined ? "hidden" : "block",

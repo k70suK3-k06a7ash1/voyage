@@ -7,7 +7,7 @@ export const EmailInput = ({ isError }: { isError: boolean }) => (
       <At size={24} color={"var(--neutral-200)"} />
     </label>
     <Input
-      className={`${style.input} ${!isError ?? style.errorInput}`}
+      className={`${style.input} ${isError && style.errorInput}`}
       id="email"
       type="email"
       name="email"

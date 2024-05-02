@@ -1,6 +1,6 @@
 import style from "./index.module.css";
 export const Spinner = () => (
-  <div style={{ display: "flex", justifyContent: "center", width: "100vw" }}>
+  <div>
     <div className={style.svgFrame}>
       <svg>
         <g id="out1">

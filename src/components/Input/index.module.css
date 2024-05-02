@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     background: none;
-    border: .0625rem solid var(--neutral-400) !important;
+    border: .0625rem solid var(--neutral-400);
     border-radius: 0;
     outline: none;
     -webkit-appearance: none;
