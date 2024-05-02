@@ -2,8 +2,9 @@ import { useActionState } from "react";
 import { Spacer } from "../../components/Spacer";
 import { loginAction } from "@/actions/login";
 import { Button } from "@/components/Button";
-import { Input } from "@/components/Input";
+// import { Input } from "@/components/Input";
 import { ErrorMessage } from "@/components/ErrorMessage";
+import { EmailInput } from "@/components/EmailInput";
 
 export const LogInForm = () => {
   const [error, formAction, isPending] = useActionState(loginAction, undefined);
@@ -20,13 +21,7 @@ export const LogInForm = () => {
       <form action={formAction}>
         <label htmlFor="email">Email</label>
         <Spacer size={2} />
-        <Input
-          id="email"
-          disabled={isPending}
-          type="email"
-          name="email"
-          placeholder="Enter your email"
-        />
+        <EmailInput />
 
         <Spacer size={16} />
         <Button type="submit" disabled={isPending}>
