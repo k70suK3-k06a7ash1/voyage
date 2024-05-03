@@ -19,7 +19,7 @@ export const LogInForm = () => {
   if (result?.type === "success") notify();
 
   return (
-    <aside>
+    <aside className="auth-pc">
       <h1 className="title">Voyage</h1>
       <Spacer size={8} />
       <h2 className="concept">

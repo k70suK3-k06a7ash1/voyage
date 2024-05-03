@@ -92,10 +92,9 @@ a:focus-visible{
   height: 100vh;
 }
 
-@media screen and (min-width:375px) and (min-width: 600px) {
-  .root-container {
-    align-items: end;
-    padding: 0 7rem
+@media screen and (min-width:640px) {
+  .auth-pc {
+    align-content: flex-end;
   }
 }
 
