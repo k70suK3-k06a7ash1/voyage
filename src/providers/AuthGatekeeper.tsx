@@ -28,7 +28,9 @@ export function AuthGatekeeper({ children }: PropsWithChildren) {
   const match = Match.type<Session | null>().pipe(
     Match.when(Match.null, (_) => <LogInForm />),
     Match.orElse((session) => (
-      <AuthSessionContext value={session}>{children}</AuthSessionContext>
+      <AuthSessionContext value={session}>
+        <div className="root-container">{children}</div>
+      </AuthSessionContext>
     ))
   );
 

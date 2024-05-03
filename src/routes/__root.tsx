@@ -17,29 +17,26 @@ export const Route = createRootRoute({
   component: () => (
     <>
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-      <div className="root-container">
-        <Suspense fallback={<></>}>
-          <AuthGatekeeper>
-            <Header />
-            <div className="content">
-              <Outlet />
-            </div>
-            <ButtomBar />
-          </AuthGatekeeper>
+      <Suspense fallback={<></>}>
+        <AuthGatekeeper>
+          <Header />
+          <div className="content">
+            <Outlet />
+          </div>
+          <ButtomBar />
           {/* <TanStackRouterDevtools /> */}
-        </Suspense>
-        <ToastContainer
-          toastClassName="toastOverwrite"
-          style={{
-            top: "0.5rem",
-            padding: `${isSmartPhone() ? "0 0.5rem" : ""}`,
-          }}
-          position={isSmartPhone() ? "top-center" : "top-left"}
-          theme="colored"
-          transition={Slide}
-        />
-      </div>
+          <ToastContainer
+            toastClassName="toastOverwrite"
+            style={{
+              top: "0.5rem",
+              padding: `${isSmartPhone() ? "0 0.5rem" : ""}`,
+            }}
+            position={isSmartPhone() ? "top-center" : "top-left"}
+            theme="colored"
+            transition={Slide}
+          />
+        </AuthGatekeeper>
+      </Suspense>
     </>
   ),
 });
