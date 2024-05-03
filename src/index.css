@@ -1,6 +1,7 @@
 body{
     background-color: var(--neutral-200);
 }
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -95,6 +96,9 @@ a:focus-visible{
 @media screen and (min-width:640px) {
   .auth-pc {
     align-content: flex-end;
+  }
+  .root-container{
+    padding: 0 4rem;
   }
 }
 
