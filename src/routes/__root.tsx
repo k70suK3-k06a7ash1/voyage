@@ -3,6 +3,7 @@ import { ButtomBar } from "@/components/BottomBar";
 import { Header } from "@/components/Header";
 // import { Menu } from "@/objects/Menu";
 import { AuthGatekeeper } from "@/providers/AuthGatekeeper";
+import { TravelGatekeeper } from "@/providers/TravelGatekeeper";
 import { createRootRoute, Outlet } from "@tanstack/react-router";
 // import { TanStackRouterDevtools } from "@tanstack/router-devtools";
 import { Suspense } from "react";
@@ -19,23 +20,25 @@ export const Route = createRootRoute({
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <Suspense fallback={<></>}>
         <AuthGatekeeper>
-          <Header />
-          <div className="content">
-            <Outlet />
-          </div>
-          <ButtomBar />
-          {/* <TanStackRouterDevtools /> */}
-          <ToastContainer
-            toastClassName="toastOverwrite"
-            style={{
-              top: "0.5rem",
-              padding: `${isSmartPhone() ? "0 0.5rem" : ""}`,
-            }}
-            position={isSmartPhone() ? "top-center" : "top-left"}
-            theme="colored"
-            transition={Slide}
-          />
+          <TravelGatekeeper>
+            <Header />
+            <div className="content">
+              <Outlet />
+            </div>
+            <ButtomBar />
+            {/* <TanStackRouterDevtools /> */}
+          </TravelGatekeeper>
         </AuthGatekeeper>
+        <ToastContainer
+          toastClassName="toastOverwrite"
+          style={{
+            top: "0.5rem",
+            padding: `${isSmartPhone() ? "0 0.5rem" : ""}`,
+          }}
+          position={isSmartPhone() ? "top-center" : "top-left"}
+          theme="colored"
+          transition={Slide}
+        />
       </Suspense>
     </>
   ),

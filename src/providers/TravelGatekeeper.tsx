@@ -18,5 +18,6 @@ const getTravelProgram = Effect.gen(function* (_) {
 export const TravelGatekeeper = ({ children }: PropsWithChildren) => {
   const travel = use(useMemo(() => Effect.runPromise(getTravelProgram), []));
   console.log(travel);
+  if (true) return <>hello</>;
   return <>{children}</>;
 };
