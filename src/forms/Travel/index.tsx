@@ -1,18 +1,17 @@
-export const TravelForm = () => {
-  const handleShowModal = () => {
-    // ref.current?.showModal();
+const initRef = (ref: HTMLDialogElement | null) => {
+  ref?.showModal();
+  return () => {
+    ref?.close();
   };
+};
+
+export const TravelForm = () => {
+  const handleShowModal = () => {};
+
   return (
     <>
       <button onClick={handleShowModal}>Show</button>
-      <dialog
-        ref={(ref) => {
-          ref?.showModal();
-          return () => {
-            ref?.close();
-          };
-        }}
-      >
+      <dialog ref={initRef}>
         <form>sample</form>
       </dialog>
     </>
