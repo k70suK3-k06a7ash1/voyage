@@ -1,7 +1,7 @@
-const initRef = (ref: HTMLDialogElement | null) => {
-  ref?.showModal();
+const initDialogRef = (ref: HTMLDialogElement) => {
+  ref.showModal();
   return () => {
-    ref?.close();
+    ref.close();
   };
 };
 
@@ -11,7 +11,7 @@ export const TravelForm = () => {
   return (
     <>
       <button onClick={handleShowModal}>Show</button>
-      <dialog ref={initRef}>
+      <dialog ref={initDialogRef}>
         <form>sample</form>
       </dialog>
     </>
