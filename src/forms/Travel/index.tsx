@@ -11,7 +11,7 @@ import {
 } from "react";
 
 const initDialogRef = (ref: HTMLDialogElement) => {
-  ref.close();
+  ref.showModal();
   return () => {
     ref.close();
   };
@@ -128,8 +128,8 @@ export const TravelForm = () => {
   console.log({ isPending });
   return (
     <>
-      <App />
       <dialog ref={initDialogRef}>
+        <App />
         <form action={submitAction}>
           label : {title}
           <div />
