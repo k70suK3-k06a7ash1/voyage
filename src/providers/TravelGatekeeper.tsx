@@ -1,4 +1,5 @@
 import { getTravelsProgram } from "@/effects/getTravelProgram";
+import { TravelForm } from "@/forms/Travel";
 import { Effect, Match } from "effect";
 import { PropsWithChildren, use, useMemo } from "react";
 
@@ -8,7 +9,7 @@ export const TravelGatekeeper = ({ children }: PropsWithChildren) => {
   return Match.value(travels).pipe(
     Match.when(
       (e) => e.length === 0,
-      () => <>new travel</>
+      () => <TravelForm />
     ),
     Match.orElse(() => <>{children}</>)
   );

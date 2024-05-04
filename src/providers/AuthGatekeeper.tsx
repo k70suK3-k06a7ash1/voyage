@@ -3,24 +3,9 @@ import { AuthSessionContext } from "../contexts/AuthSessionContext";
 import { Effect, Match } from "effect";
 import { getSupanaseSessionProgram } from "../effects/getSupanaseSessionProgram";
 import { Session } from "@supabase/supabase-js";
-import { LogInForm } from "../objects/LogInForm";
-// import { supabase } from "@/libs/supabase";
-
-// const counterReducer = (state: number, action: { type: "INCREMENT" }) => {
-//   switch (action.type) {
-//     case "INCREMENT":
-//       return state + 1;
-
-//     default:
-//       return state;
-//   }
-// };
+import { LogInForm } from "../forms/LogIn";
 
 export function AuthGatekeeper({ children }: PropsWithChildren) {
-  // const [counter, dispatch] = useReducer(counterReducer, 0);
-  // supabase.auth.onAuthStateChange((_event) => {
-  //   dispatch({ type: "INCREMENT" });
-  // });
   const session = use(
     useMemo(() => Effect.runPromise(getSupanaseSessionProgram), [])
   );
