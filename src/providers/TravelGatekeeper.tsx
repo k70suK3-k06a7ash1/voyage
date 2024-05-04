@@ -1,13 +1,19 @@
-// import { supabase } from "@/libs/supabase";
-// import { PostgrestError } from "@supabase/supabase-js";
-import { getCountriesProgram } from "@/effects/getCountiesProgram";
-import { Effect } from "effect";
+import { getTravelsProgram } from "@/effects/getTravelProgram";
+import { Effect, Match } from "effect";
 import { PropsWithChildren, use, useMemo } from "react";
 
 export const TravelGatekeeper = ({ children }: PropsWithChildren) => {
-  const travel = use(useMemo(() => Effect.runPromise(getCountriesProgram), []));
-  console.log(travel);
-  if (true)
-    return <>{travel?.map((country) => <p>{JSON.stringify(country)}</p>)}</>;
-  return <>{children}</>;
+  const travels = use(useMemo(() => Effect.runPromise(getTravelsProgram), []));
+  console.log(travels);
+
+  const result = Match.value(travels).pipe(
+    Match.when(Match.null, () => <>new travel</>),
+    Match.when(
+      (e) => e.length === 0,
+      () => <>new travel</>
+    ),
+    Match.orElse(() => <>{children}</>)
+  );
+
+  return result;
 };
