@@ -10,8 +10,4 @@ export const getTravelsProgram = Effect.gen(function* (_) {
 
   if (response.data === null) return [];
   return response.data;
-  //   switch (response) {
-  //     case response.error instanceof Error:
-  //       return yield* Effect.fail(new Error());
-  //   }
 });
