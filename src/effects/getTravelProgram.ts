@@ -8,6 +8,7 @@ export const getTravelsProgram = Effect.gen(function* (_) {
     catch: () => new ResponseError(),
   });
 
+  if (response.data === null) return [];
   return response.data;
   //   switch (response) {
   //     case response.error instanceof Error:
