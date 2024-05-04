@@ -1,5 +1,5 @@
 import { supabase } from "@/libs/supabase";
-import { Effect } from "effect";
+import { Effect, Option } from "effect";
 
 class ResponseError {}
 export const getTravelsProgram = Effect.gen(function* (_) {
@@ -7,7 +7,6 @@ export const getTravelsProgram = Effect.gen(function* (_) {
     try: () => supabase.from("travels").select(),
     catch: () => new ResponseError(),
   });
-
-  if (response.data === null) return [];
-  return response.data;
+  const data = response.data;
+  return Option.getOrNull(Option.some(data)) ?? [];
 });
