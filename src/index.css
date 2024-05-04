@@ -85,6 +85,7 @@ a:focus-visible{
 
 
 .root-container {
+  overflow-wrap: break-word;  
   margin: 0;
   display: flex;
   justify-content: center;
