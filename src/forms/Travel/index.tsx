@@ -14,9 +14,9 @@ const deliverTitle = async (title: string) => {
 export const TravelForm = () => {
   const formRef = useRef<HTMLFormElement | null>(null);
   const [title, setTitle] = useState("");
-  const [optimisticTitle, addOptimisticTitle] = useOptimistic(
+  const [optimisticTitle, addOptimisticTitle] = useOptimistic<string, string>(
     title,
-    (currentState, optimisticValue) => currentState + optimisticValue
+    (_currentState, optimisticValue) => optimisticValue
   );
 
   const sendTitle = async (formData: FormData) => {
@@ -25,7 +25,7 @@ export const TravelForm = () => {
   };
 
   const formAction = async (formData: FormData) => {
-    addOptimisticTitle(formData.get("title"));
+    addOptimisticTitle(formData.get("title") as string);
     formRef.current?.reset();
     await sendTitle(formData);
   };
