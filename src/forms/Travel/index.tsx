@@ -28,7 +28,8 @@ export const TravelForm = () => {
 
   const [response, submitAction, isPending] = useActionState<string, FormData>(
     actionFn,
-    ""
+    "",
+    "/finished/"
   );
 
   return (
@@ -41,6 +42,7 @@ export const TravelForm = () => {
           <input name="title" type="text" />
           <button type="submit">Submit</button>
           {isPending && <p>Submitting...</p>}
+          <p className="custom-number">2024年5月5日</p>
         </form>
       </dialog>
     </>

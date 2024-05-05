@@ -138,3 +138,14 @@ label {
 .toastOverwrite {
   border-radius: 6px !important;
 }
+
+@font-face{
+  font-family:"Adjusted";
+  src: local("HiraginoSans-W6");
+  size-adjust: 150%;
+  unicode-range: U+30-39;
+}
+
+.custom-number{
+  font-family: "Adjusted", sans-serif;
+}
