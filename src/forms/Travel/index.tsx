@@ -1,4 +1,5 @@
-import { useOptimistic, useRef, useState } from "react";
+import { useActionState, useOptimistic, useRef } from "react";
+import { UseOptimisticStateForm } from "../UseOptimisticState";
 
 const initDialogRef = (ref: HTMLDialogElement) => {
   ref.showModal();
@@ -13,33 +14,34 @@ const deliverTitle = async (title: string) => {
 };
 export const TravelForm = () => {
   const formRef = useRef<HTMLFormElement | null>(null);
-  const [title, setTitle] = useState("");
-  const [optimisticTitle, addOptimisticTitle] = useOptimistic<string, string>(
-    title,
+  const [title, setTitle] = useOptimistic<string, string>(
+    "",
     (_currentState, optimisticValue) => optimisticValue
   );
-
-  const sendTitle = async (formData: FormData) => {
-    const sentTitle = await deliverTitle(formData.get("title") as string);
-    setTitle(() => sentTitle);
-  };
-
-  const formAction = async (formData: FormData) => {
-    addOptimisticTitle(formData.get("title") as string);
-    formRef.current?.reset();
-    await sendTitle(formData);
-  };
+  const [response, submitAction, isPending] = useActionState<
+    string | null,
+    FormData
+  >(
+    async (_, formData) => {
+      const requestTitle = formData.get("title") as string;
+      setTitle(requestTitle);
+      await deliverTitle(requestTitle);
+      return requestTitle + "done";
+    },
+    null,
+    "/finished"
+  );
 
   return (
     <>
       <dialog ref={initDialogRef}>
-        <form ref={formRef} action={formAction}>
-          optimatic : {optimisticTitle}
-          <div />
-          label : {title}
+        <UseOptimisticStateForm />
+        <form ref={formRef} action={submitAction}>
+          label : {isPending ? title : response}
           <div />
           <input name="title" type="text" />
           <button type="submit">Submit</button>
+          {isPending && <p>Submitting...</p>}
         </form>
       </dialog>
     </>
