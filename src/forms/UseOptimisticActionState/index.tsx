@@ -35,22 +35,17 @@ export const UseOptimisticActionStateForm = () => {
   const [response, submitAction, isPending] = useActionState<
     ReturnResponse | null,
     FormData
-  >(
-    async (_, formData) => {
-      const props = parseFormData(formData);
-      setName(props.name);
-      const error = await updateName(props);
-      if (!error.ok) {
-        return error;
-      }
-      // redirect to /finished without 3rd argument
-      // redirect("/finished", RedirectType.push);
-      return null;
-    },
-    null,
-    // redirect to /finished
-    "/finished"
-  );
+  >(async (_, formData) => {
+    const props = parseFormData(formData);
+    setName(props.name);
+    const error = await updateName(props);
+    if (!error.ok) {
+      return error;
+    }
+    // redirect to /finished without 3rd argument
+    // redirect("/finished", RedirectType.push);
+    return null;
+  }, null);
 
   return (
     <div>

@@ -1,5 +1,5 @@
 import { useActionState, useOptimistic, useRef } from "react";
-import { UseOptimisticStateForm } from "../UseOptimisticState";
+// import { UseOptimisticStateForm } from "../UseOptimisticState";
 
 const initDialogRef = (ref: HTMLDialogElement) => {
   ref.showModal();
@@ -18,24 +18,23 @@ export const TravelForm = () => {
     "",
     (_currentState, optimisticValue) => optimisticValue
   );
-  const [response, submitAction, isPending] = useActionState<
-    string | null,
-    FormData
-  >(
-    async (_, formData) => {
-      const requestTitle = formData.get("title") as string;
-      setTitle(requestTitle);
-      await deliverTitle(requestTitle);
-      return requestTitle + "done";
-    },
-    null,
-    "/finished"
+
+  const actionFn = async (_: unknown, formData: FormData) => {
+    const requestTitle = formData.get("title") as string;
+    setTitle(requestTitle);
+    await deliverTitle(requestTitle);
+    return requestTitle + "done";
+  };
+
+  const [response, submitAction, isPending] = useActionState<string, FormData>(
+    actionFn,
+    ""
   );
 
   return (
     <>
       <dialog ref={initDialogRef}>
-        <UseOptimisticStateForm />
+        {/* <UseOptimisticStateForm /> */}
         <form ref={formRef} action={submitAction}>
           label : {isPending ? title : response}
           <div />
