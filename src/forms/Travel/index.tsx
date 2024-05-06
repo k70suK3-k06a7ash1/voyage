@@ -1,6 +1,6 @@
 import { useActionState, useOptimistic, useRef } from "react";
 import { useFormStatus } from "react-dom";
-
+import { DateTime } from "ts-luxon";
 const initDialogRef = (ref: HTMLDialogElement) => {
   ref.showModal();
   return () => {
@@ -35,7 +35,14 @@ export const TravelForm = () => {
   return (
     <>
       <dialog ref={initDialogRef}>
-        <p className="custom-number">2024年5月5日</p>
+        <p className="custom-number">
+          2024年5月5日{" "}
+          {DateTime.now()
+            .setZone("America/New_York")
+            .minus({ weeks: 1 })
+            .endOf("day")
+            .toISO()}
+        </p>
 
         <form ref={formRef} action={submitAction}>
           label : {isPending ? title : response}
