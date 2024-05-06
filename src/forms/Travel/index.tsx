@@ -24,7 +24,7 @@ export const TravelForm = () => {
     const requestTitle = formData.get("title") as string;
     setTitle(requestTitle);
     await deliverTitle(requestTitle);
-    return requestTitle + "done";
+    return requestTitle;
   };
 
   const [response, submitAction, isPending] = useActionState<string, FormData>(
