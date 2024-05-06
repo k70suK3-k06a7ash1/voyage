@@ -1,4 +1,5 @@
 import { useActionState, useOptimistic, useRef } from "react";
+import { useFormStatus } from "react-dom";
 // import { UseOptimisticStateForm } from "../UseOptimisticState";
 
 const initDialogRef = (ref: HTMLDialogElement) => {
@@ -40,11 +41,19 @@ export const TravelForm = () => {
           label : {isPending ? title : response}
           <div />
           <input name="title" type="text" />
-          <button type="submit">Submit</button>
+          <SubmitButton />
           {isPending && <p>Submitting...</p>}
           <p className="custom-number">2024年5月5日</p>
         </form>
       </dialog>
     </>
+  );
+};
+
+const SubmitButton = () => {
+  const { pending } = useFormStatus();
+
+  return (
+    <>{pending ? <>is pending</> : <button type="submit">Submit</button>}</>
   );
 };
