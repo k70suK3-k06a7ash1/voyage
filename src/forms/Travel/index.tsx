@@ -35,13 +35,14 @@ export const TravelForm = () => {
   return (
     <>
       <dialog ref={initDialogRef}>
+        <p className="custom-number">2024年5月5日</p>
+
         <form ref={formRef} action={submitAction}>
           label : {isPending ? title : response}
           <div />
           <input name="title" type="text" />
           <SubmitButton />
           {isPending && <p>Submitting...</p>}
-          <p className="custom-number">2024年5月5日</p>
         </form>
       </dialog>
     </>

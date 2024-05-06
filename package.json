@@ -24,6 +24,7 @@
     "react": "^19.0.0-beta-94eed63c49-20240425",
     "react-dom": "^19.0.0-beta-94eed63c49-20240425",
     "react-toastify": "^10.0.5",
+    "ts-luxon": "^4.5.2",
     "xstate": "^5.13.0"
   },
   "devDependencies": {
