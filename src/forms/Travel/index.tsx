@@ -28,23 +28,29 @@ export const TravelForm = () => {
 
   const [response, submitAction, isPending] = useActionState<string, FormData>(
     actionFn,
-    "",
-    "/finished/"
+    ""
   );
 
   return (
     <>
       <dialog ref={initDialogRef}>
         <p className="custom-number">
-          {DateTime.now().toFormat("yyyy年/MM月/dd日")}
+          <span className="sp-block">
+            {DateTime.now().toFormat("yyyy年MM月dd日")}
+          </span>{" "}
+          <span className="sp-block">~</span>{" "}
+          <span className="sp-block">
+            {DateTime.now().toFormat("yyyy年MM月dd日")}
+          </span>
         </p>
 
         <form ref={formRef} action={submitAction}>
-          label : {isPending ? title : response}
+          Travel Title : {isPending ? title : response}
+          {isPending && <p>Submitting...</p>}
           <div />
           <input name="title" type="text" />
+          <div />
           <SubmitButton />
-          {isPending && <p>Submitting...</p>}
         </form>
       </dialog>
     </>
@@ -53,7 +59,6 @@ export const TravelForm = () => {
 
 const SubmitButton = () => {
   const { pending } = useFormStatus();
-
   return (
     <>{pending ? <>is pending</> : <button type="submit">Submit</button>}</>
   );

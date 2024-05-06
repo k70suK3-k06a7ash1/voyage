@@ -142,7 +142,7 @@ label {
 @font-face{
   font-family:"Adjusted";
   src: local("HiraginoSans-W6");
-  size-adjust: 150%;
+  size-adjust: 135%;
   unicode-range: U+30-39;
 }
 
@@ -156,4 +156,15 @@ dialog{
   border-radius: .655rem;
   height: 80vh;
   padding: 1.5rem;
+}
+
+.sp-block{
+  display: block;
+}
+
+@media screen and (min-width:640px) {
+  .sp-block {
+    
+    display: inline;
+  }
 }
