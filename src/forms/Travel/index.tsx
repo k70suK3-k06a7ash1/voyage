@@ -36,12 +36,7 @@ export const TravelForm = () => {
     <>
       <dialog ref={initDialogRef}>
         <p className="custom-number">
-          2024年5月5日{" "}
-          {DateTime.now()
-            .setZone("America/New_York")
-            .minus({ weeks: 1 })
-            .endOf("day")
-            .toISO()}
+          {DateTime.now().toFormat("yyyy年/MM月/dd日")}
         </p>
 
         <form ref={formRef} action={submitAction}>
