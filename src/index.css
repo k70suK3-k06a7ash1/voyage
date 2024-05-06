@@ -149,3 +149,10 @@ label {
 .custom-number{
   font-family: "Adjusted", sans-serif;
 }
+
+
+dialog{
+  width: 80%;
+  border-radius: .655rem;
+  height: 80vh;
+}

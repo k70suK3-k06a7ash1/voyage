@@ -1,6 +1,5 @@
 import { useActionState, useOptimistic, useRef } from "react";
 import { useFormStatus } from "react-dom";
-// import { UseOptimisticStateForm } from "../UseOptimisticState";
 
 const initDialogRef = (ref: HTMLDialogElement) => {
   ref.showModal();
@@ -36,7 +35,6 @@ export const TravelForm = () => {
   return (
     <>
       <dialog ref={initDialogRef}>
-        {/* <UseOptimisticStateForm /> */}
         <form ref={formRef} action={submitAction}>
           label : {isPending ? title : response}
           <div />
