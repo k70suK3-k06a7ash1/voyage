@@ -10,7 +10,7 @@ export function AuthGatekeeper({ children }: PropsWithChildren) {
   const session = use(
     useMemo(() => Effect.runPromise(getSupanaseSessionProgram), [])
   );
-  promiseActor;
+  promiseActor.start();
   const match = Match.type<Session | null>().pipe(
     Match.when(Match.null, (_) => <LogInForm />),
     Match.orElse((session) => (

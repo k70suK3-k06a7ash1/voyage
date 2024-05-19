@@ -6,7 +6,7 @@ const promiseLogic = fromPromise(() => {
 });
 
 export const promiseActor = createActor(promiseLogic);
+
 promiseActor.subscribe((snapshot) => {
   console.log(snapshot);
 });
-promiseActor.start();
