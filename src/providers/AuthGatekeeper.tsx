@@ -4,7 +4,7 @@ import { Effect, Match } from "effect";
 import { getSupanaseSessionProgram } from "../effects/getSupanaseSessionProgram";
 import { Session } from "@supabase/supabase-js";
 import { LogInForm } from "../forms/LogIn";
-import { promiseActor } from "@/actors/authActor";
+import { promiseActor } from "@/actors/promiseActor";
 
 export function AuthGatekeeper({ children }: PropsWithChildren) {
   const session = use(
